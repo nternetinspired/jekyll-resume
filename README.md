@@ -19,7 +19,7 @@ Turning this into your own résumé is pretty straightforward I think.
 That's it, Github should build your site automatically to: http://[YOUR GITHUB USERNAME].github.io/jekyll-resume just as mine builds automatically to [http://nternetinspired.github.io/jekyll-resume](http://nternetinspired.github.io/jekyll-resume)
 
 ## Questions? Issues?
-Please create a new issue or, even better, send me a pull request.
+Please [create a new issue](https://github.com/nternetinspired/jekyll-resume/issues) or, even better, [send me a pull request](https://github.com/nternetinspired/jekyll-resume/pulls).
 
 ## Copyright and license
 
