@@ -18,7 +18,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Powered by Jekyll, and Github Pages ready, Jekyll-cv is a lightweight and lightning-fast
   html résumé making machine from @nternetinspired. Because web developers shouldn't
   showcase their skills on bits of dead tree.
-baseurl: "/jekyll-cv/" # the subpath of your site, e.g. /blog/
+baseurl: "/jekyll-resume/" # the subpath of your site, e.g. /blog/
 url: "http://nternetinspired.github.io" # the base hostname & protocol for your site
 
 # Compress html
