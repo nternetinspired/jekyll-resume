@@ -1,0 +1,34 @@
+
+/* ==========================================================================
+    SECTION
+   ========================================================================== */
+
+/* Gives the content sections some breathing space */
+.section {
+
+	+ section {
+	//	border-top: 1px solid $color-border;
+	//	padding-top: spacer(4);
+	}
+
+	@if $show-wireframe == true {
+		@include box-shadow(0 0 0 1px rgba(0,0,0,.5) inset);
+	}
+}
+
+/* Section headers */
+
+.section-heading {
+
+	padding-top: spacer(4);
+
+	@include mq($min, $md) {
+		margin-right: spacer(4);
+		text-align: right;
+	}
+}
+
+.section-content {
+	border-top: 1px solid $color-border;
+	padding-top: spacer(4);
+}

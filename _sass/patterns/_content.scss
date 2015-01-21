@@ -1,0 +1,17 @@
+
+/* ==========================================================================
+    CONTENT
+   ========================================================================== */
+
+/* Gives the content sections some breathing space */
+.content {
+	@extend .wrapper;
+	max-width: $wrapper-width;
+	@include space;
+}
+
+.content-narrow {
+	@extend .wrapper;
+	max-width: $wrapper-width-narrow;
+	@include space;
+}

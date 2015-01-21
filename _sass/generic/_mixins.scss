@@ -1,0 +1,273 @@
+
+// ==========================================================================
+//  MIXINS
+// ==========================================================================
+
+@mixin box-sizing($box-sizing: border-box) {
+    -webkit-box-sizing: #{$box-sizing};
+    -moz-box-sizing: #{$box-sizing};
+    box-sizing: #{$box-sizing};
+}
+
+// Better OSX font-rendering
+@mixin font-smoothing() {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Cross-browser opacity
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack.
+@mixin clearfix {
+    &:before,
+    &:after{
+        content:"";
+        display:table;
+    }
+    &:after{
+        clear:both;
+    }
+}
+
+// Font-face syntax, the easy way
+@mixin font-face($family,$src,$weight: normal,$style: normal) {
+	@font-face {
+		font-family: $family;
+		src: url('#{$src}.eot'); // IE9 compat
+		src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+			url('#{$src}.woff') format('woff'), // standards
+			url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+			url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+
+		font-style: $style;
+		font-weight: $weight;
+	}
+}
+
+// Vertically and horizontally center something of unknown size inside and parent of unknown size.
+@mixin center {
+    margin-top: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+// Useful for image replacement
+@mixin text-hide() {
+    font: #{0/0} a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+// Hyphenate text.
+@mixin hyphens() {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+}
+
+// Basic transitions.
+@mixin transition($transition: all .3s ease) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+// Better box-shadows.
+@mixin box-shadow($shadow1, $shadow2:false, $shadow3:false) {
+    $shadows: $shadow1;
+    @if $shadow2 { $shadows: $shadow1, $shadow2; }
+    @if $shadow3 { $shadows: $shadow1, $shadow2, $shadow3; }
+    -webkit-box-shadow: $shadows;
+    -moz-box-shadow: $shadows;
+    box-shadow: $shadows;
+}
+
+// Basic horizontal gradients.
+@mixin horizontal($startColor: $brand-color, $endColor: lighten($brand-color, 10%)) {
+    background-color: $endColor;
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, from($startColor), to($endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(left, $startColor, $endColor);                   // Safari 5.1+, Chrome 10+
+    background-image: -moz-linear-gradient(left, $startColor, $endColor);                      // FF 3.6+
+    background-image: -ms-linear-gradient(left, $startColor, $endColor);                       // IE10
+    background-image: -o-linear-gradient(left, $startColor, $endColor);                        // Opera 11.10
+    background-image: linear-gradient(left, $startColor, $endColor);                           // W3C
+    background-repeat: repeat-x;
+}
+
+// Basic vertical gradients.
+@mixin vertical($startColor: $brand-background, $endColor: darken($brand-background, 5%)) {
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(top, $startColor, $endColor);                    // Safari 5.1+, Chrome 10+
+    background-color: $endColor;
+    background-image: -moz-linear-gradient(top, $startColor, $endColor);                       // FF 3.6+
+    background-image: -ms-linear-gradient(top, $startColor, $endColor);                        // IE10
+    background-image: -o-linear-gradient(top, $startColor, $endColor);                         // Opera 11.10
+    background-image: linear-gradient(top, $startColor, $endColor);                            // W3C
+    background-repeat: repeat-x;
+}
+
+/*============================================================================
+Dependency-free breakpoint mixin
+- http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
+==============================================================================*/
+$min: min-width;
+$max: max-width;
+@mixin mq($constraint, $viewport1, $viewport2:null) {
+    @if $constraint == $min {
+        @media screen and ($min: $viewport1) {
+            @content;
+        }
+    } @else if $constraint == $max {
+        @media screen and ($max: $viewport1) {
+            @content;
+        }
+    } @else {
+        @media screen and ($min: $viewport1) and ($max: $viewport2) {
+            @content;
+        }
+    }
+}
+
+// ==========================================================================
+//  HELPER FUNCTIONS
+// ==========================================================================
+
+// Returns a number without a unit.
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+// Converts the $root-size value to EMs for use in the functions below.
+$root-size-em: ($root-size / 16px) * 1em;
+
+// Returns a context-dependant em value for vertically spacing elements, where a
+// value of 4 is equal to our vertical baseline height.
+@function spacer($lines: 4, $font-size: $root-size-em) {
+    @return
+
+        ($lines * (strip-units($root-lineheight * $root-size-em)) / 4)
+
+        /
+
+        (strip-units($font-size))
+
+        +em;
+}
+
+
+// ==========================================================================
+//  SECTION SPACING
+// ==========================================================================
+
+// Add proportional space, increasing with viewport and maintaining vertical rhythm.
+@mixin space {
+    padding: spacer(2) spacer(4);
+
+    @include mq($min, $sm) {
+        padding: spacer(4) spacer(4);
+    }
+
+    @include mq($min, $md) {
+        padding: spacer(6) spacer(4);
+    }
+
+    @include mq($min, $lg) {
+        padding: spacer(8) spacer(4);
+    }
+}
+
+
+// ==========================================================================
+//  TYPE SETTING VODOO
+// ==========================================================================
+
+/*
+ * Usage
+ *
+ * The simplest method is to just pass the font-size and then get an automagically
+ * calculated lineheight and bottom margin to keep the element on the baseline.
+ * e.g.
+ *
+ * .foo {@include font-size($scale-up1);}
+ *
+ * compiles to:
+ *
+ * .foo {
+ *    font-size: 1.333em;
+ *    line-height: 1.5003750938;
+ *    margin-bottom: 1.5003750938em
+ * }
+ *
+ * Alternatively, you can pass a value for the bottom margin to the spacer
+ * function;
+ *
+ * .foo {@include font-size($scale-up1, 2);}
+ *
+ * compiles to:
+ *
+ * .foo {
+ *    font-size: 1.333em;
+ *    line-height: 1.5003750938;
+ *    margin-bottom: 0.7501875469em;
+ * }
+ *
+ * or omit the margin completely;
+ * .foo {@include font-size($scale-up1, none);}
+ *
+ * compiles to:
+ *
+ * .foo {
+ *    font-size: 1.333em;
+ *    line-height: 1.5003750938;
+ * }
+ *
+ * Line-height can be specified explicitly, as an integer or valid line-height
+ * value, e.g.;
+ *
+ * .foo {@include font-size($scale-up1, none, normal);}
+ *
+ * compiles to:
+ *
+ * .foo {
+ *    font-size: 1.333em;
+ *    line-height: normal;
+ * }
+ *
+ *
+ */
+
+
+@mixin font-size($font-size: $root-size-em, $spacer: 4, $lineheight: auto) {
+    font-size: $font-size;
+
+    // If you don't pass a lineheight param, auto-calculate it.
+    @if $lineheight == auto {
+        line-height: ceil($font-size / $root-lineheight) * ($root-lineheight / $font-size);
+    }
+
+    // If you pass an integer, or valid line-height setting we'll use that instead.
+    @if (type-of($lineheight) == number or $lineheight == inherit or $lineheight == normal) {
+        line-height: $lineheight;
+    }
+
+    // Use the margin spacer value, if it's an integer.
+    @if (type-of($spacer) == number) {
+        margin-top: spacer($spacer, $font-size);
+    }
+}

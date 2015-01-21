@@ -1,0 +1,176 @@
+
+/* ==========================================================================
+INLINE GRID
+============================================================================= */
+
+.grid {
+    list-style: none;
+    padding: 0;
+
+    @if $grid-gutter == false {
+        @extend .margin-off-all;
+    }
+
+    @if $grid-gutter == true {
+        margin-left: spacer(-4);
+    }
+}
+
+.grid-item {
+
+    display: inline-block;
+    vertical-align: top;
+
+    @if $grid-gutter == true {
+        padding-left: spacer(4);
+
+        &:first-child {
+            margin-top: spacer();
+        }
+    }
+}
+
+@mixin grid-setup($namespace: "") {
+
+    /* Whole */
+    .#{$namespace}one-whole         { width:100%; }
+
+    /* Halves */
+    .#{$namespace}one-half          { width:50%; }
+
+    /* Thirds */
+    .#{$namespace}one-third         { width:33.333%; }
+    .#{$namespace}two-thirds        { width:66.666%; }
+
+    /* Quarters */
+    .#{$namespace}one-quarter       { width:25%; }
+    .#{$namespace}two-quarters      { @extend .#{$namespace}one-half; }
+    .#{$namespace}three-quarters    { width:75%; }
+
+    /* Fifths */
+    .#{$namespace}one-fifth         { width:20%; }
+    .#{$namespace}two-fifths        { width:40%; }
+    .#{$namespace}three-fifths      { width:60%; }
+    .#{$namespace}four-fifths       { width:80%; }
+
+    /* Sixths */
+//    .#{$namespace}one-sixth         { width:16.666%; }
+//    .#{$namespace}two-sixths        { @extend .#{$namespace}one-third; }
+//    .#{$namespace}three-sixths      { @extend .#{$namespace}one-half; }
+//    .#{$namespace}four-sixths       { @extend .#{$namespace}two-thirds; }
+//    .#{$namespace}five-sixths       { width:83.333%; }
+
+    /* Eighths */
+//    .#{$namespace}one-eighth        { width:12.5%; }
+//    .#{$namespace}two-eighths       { @extend .#{$namespace}one-quarter; }
+//    .#{$namespace}three-eighths     { width:37.5%; }
+//    .#{$namespace}four-eighths      { @extend .#{$namespace}one-half; }
+//    .#{$namespace}five-eighths      { width:62.5%; }
+//    .#{$namespace}six-eighths       { @extend .#{$namespace}three-quarters; }
+//    .#{$namespace}seven-eighths     { width:87.5%; }
+
+    /* Tenths */
+//    .#{$namespace}one-tenth         { width:10%; }
+//    .#{$namespace}two-tenths        { @extend .#{$namespace}one-fifth; }
+//    .#{$namespace}three-tenths      { width:30%; }
+//    .#{$namespace}four-tenths       { @extend .#{$namespace}two-fifths; }
+//    .#{$namespace}five-tenths       { @extend .#{$namespace}one-half; }
+//    .#{$namespace}six-tenths        { @extend .#{$namespace}three-fifths; }
+//    .#{$namespace}seven-tenths      { width:70%; }
+//    .#{$namespace}eight-tenths      { @extend .#{$namespace}four-fifths; }
+//    .#{$namespace}nine-tenths       { width:90%; }
+
+    /* Twelfths */
+//    .#{$namespace}one-twelfth       { width:8.333%; }
+//    .#{$namespace}two-twelfths      { @extend .#{$namespace}one-sixth; }
+//    .#{$namespace}three-twelfths    { @extend .#{$namespace}one-quarter; }
+//    .#{$namespace}four-twelfths     { @extend .#{$namespace}one-third; }
+//    .#{$namespace}five-twelfths     { width:41.666% }
+//    .#{$namespace}six-twelfths      { @extend .#{$namespace}one-half; }
+//    .#{$namespace}seven-twelfths    { width:58.333%; }
+//    .#{$namespace}eight-twelfths    { @extend .#{$namespace}two-thirds; }
+//    .#{$namespace}nine-twelfths     { @extend .#{$namespace}three-quarters; }
+//    .#{$namespace}ten-twelfths      { @extend .#{$namespace}five-sixths; }
+//    .#{$namespace}eleven-twelfths   { width:91.666%; }
+
+
+    // Push classes, enabled in variables.scss
+    @if $grid-push {
+
+        /* Halves */
+        .#{$namespace}push-one-half          { margin-left:50%; }
+
+        /* Thirds */
+        .#{$namespace}push-one-third         { margin-left:33.333%; }
+        .#{$namespace}push-two-thirds        { margin-left:66.666%; }
+
+        /* Quarters */
+        .#{$namespace}push-one-quarter       { margin-left:25%; }
+        .#{$namespace}push-two-quarters      { @extend .#{$namespace}push-one-half; }
+        .#{$namespace}push-three-quarters    { margin-left:75%; }
+
+        /* Fifths */
+        .#{$namespace}push-one-fifth         { margin-left:20%; }
+        .#{$namespace}push-two-fifths        { margin-left:40%; }
+        .#{$namespace}push-three-fifths      { margin-left:60%; }
+        .#{$namespace}push-four-fifths       { margin-left:80%; }
+
+        /* Sixths */
+//        .#{$namespace}push-one-sixth         { margin-left:16.666%; }
+//        .#{$namespace}push-two-sixths        { @extend .#{$namespace}push-one-third; }
+//        .#{$namespace}push-three-sixths      { @extend .#{$namespace}push-one-half; }
+//        .#{$namespace}push-four-sixths       { @extend .#{$namespace}push-two-thirds; }
+//        .#{$namespace}push-five-sixths       { margin-left:83.333%; }
+
+        /* Eighths */
+//        .#{$namespace}push-one-eighth        { margin-left:12.5%; }
+//        .#{$namespace}push-two-eighths       { @extend .#{$namespace}push-one-quarter; }
+//        .#{$namespace}push-three-eighths     { margin-left:37.5%; }
+//        .#{$namespace}push-four-eighths      { @extend .#{$namespace}push-one-half; }
+//        .#{$namespace}push-five-eighths      { margin-left:62.5%; }
+//        .#{$namespace}push-six-eighths       { @extend .#{$namespace}push-three-quarters; }
+//        .#{$namespace}push-seven-eighths     { margin-left:87.5%; }
+
+        /* Tenths */
+//        .#{$namespace}push-one-tenth         { margin-left:10%; }
+//        .#{$namespace}push-two-tenths        { @extend .#{$namespace}push-one-fifth; }
+//        .#{$namespace}push-three-tenths      { margin-left:30%; }
+//        .#{$namespace}push-four-tenths       { @extend .#{$namespace}push-two-fifths; }
+//        .#{$namespace}push-five-tenths       { @extend .#{$namespace}push-one-half; }
+//        .#{$namespace}push-six-tenths        { @extend .#{$namespace}push-three-fifths; }
+//        .#{$namespace}push-seven-tenths      { margin-left:70%; }
+//        .#{$namespace}push-eight-tenths      { @extend .#{$namespace}push-four-fifths; }
+//        .#{$namespace}push-nine-tenths       { margin-left:90%; }
+
+        /* Twelfths */
+//        .#{$namespace}push-one-twelfth       { margin-left:8.333%; }
+//        .#{$namespace}push-two-twelfths      { @extend .#{$namespace}push-one-sixth; }
+//        .#{$namespace}push-three-twelfths    { @extend .#{$namespace}push-one-quarter; }
+//        .#{$namespace}push-four-twelfths     { @extend .#{$namespace}push-one-third; }
+//        .#{$namespace}push-five-twelfths     { margin-left:41.666% }
+//        .#{$namespace}push-six-twelfths      { @extend .#{$namespace}push-one-half; }
+//        .#{$namespace}push-seven-twelfths    { margin-left:58.333%; }
+//        .#{$namespace}push-eight-twelfths    { @extend .#{$namespace}push-two-thirds; }
+//        .#{$namespace}push-nine-twelfths     { @extend .#{$namespace}push-three-quarters; }
+//        .#{$namespace}push-ten-twelfths      { @extend .#{$namespace}push-five-sixths; }
+//        .#{$namespace}push-eleven-twelfths   { margin-left:91.666%; }
+    }
+}
+
+@include grid-setup();
+
+@include mq($min, $md) {
+    @include grid-setup("sm-");
+}
+
+@include mq($min, $md) {
+    @include grid-setup("md-");
+}
+
+@include mq($min, $lg) {
+    @include grid-setup("lg-");
+}
+
+@include mq($min, $xl) {
+//    @include grid-setup("xl-");
+}

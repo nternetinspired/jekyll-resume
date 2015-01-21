@@ -1,0 +1,93 @@
+
+/* ==========================================================================
+    HELPER CLASSES
+   ========================================================================== */
+
+// Clearfix the parent of floated elements to prevent it collapsing.
+.clearfix {
+    @include clearfix;
+}
+
+// Hide an element but leave it available to speaking browsers.
+.sr-only {
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+// Make visuallyhidden elements focusable with a keyboard.
+.sr-only-focusable {
+  &:active,
+  &:focus {
+        position: static;
+        clip: auto;
+        height: auto;
+        width: auto;
+        margin: 0;
+        overflow: visible;
+    }
+}
+
+/* Image replacement. */
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+
+    &:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 150%;
+    }
+}
+
+/* Vertically and horizontally center a thing */
+.center {
+    @include center;
+}
+
+/* Mute an object by reducing its opacity. */
+.muted {
+    @include opacity(0.6);
+}
+
+/* Add/remove floats */
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-none {
+    float: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Stop lobotomising one owl */
+.margin-off {
+    margin-top: 0 !important;
+}
+
+/* Stop lobotomising all owls */
+.margin-off-all {
+
+    &,
+    > * {
+        margin-top: 0 !important;
+    }
+}

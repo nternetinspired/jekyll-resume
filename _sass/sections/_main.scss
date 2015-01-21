@@ -1,0 +1,36 @@
+
+/* ==========================================================================
+    MAIN
+   ========================================================================== */
+
+[role="main"] {
+
+}
+
+[class*="-date"] {
+    @extend .margin-off;
+    @extend .muted;
+    font-style: italic;
+}
+
+.education {
+
+    &-result {
+        font-weight: $strong-weight;
+        margin: 0;
+    }
+}
+
+.experience {
+
+    h2 {
+        display: inline-block;
+        margin-right: spacer(1);
+    }
+
+    &-location {
+        @extend .margin-off;
+        @extend .muted;
+        display: inline-block;
+    }
+}

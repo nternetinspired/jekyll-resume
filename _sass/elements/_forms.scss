@@ -1,0 +1,97 @@
+
+/* ==========================================================================
+    FORMS
+   ========================================================================== */
+
+/* Some form basics. */
+form {
+//    margin-bottom: spacer(4);
+}
+
+input,
+select {
+    vertical-align: middle;
+}
+
+/* Standardise font rendering */
+input,
+select,
+textarea {
+    font-weight: $root-weight;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+/* Remove default fieldset styles. */
+fieldset {
+    border: 0;
+//    margin-bottom: spacer();
+    min-width: 0;
+    padding: 0;
+}
+
+/* Make checkboxes and radio buttons display inline. */
+label {
+    display: block;
+    font-weight: $strong-weight;
+    max-width: 100%;
+}
+
+legend {
+//    margin-bottom: spacer();
+    text-transform: uppercase;
+}
+
+input,
+textarea {
+    display: block;
+}
+
+/* De-bork serach feilds */
+input[type="search"] {
+    -webkit-appearance: none;
+}
+
+/* Don't smush image inputs or textarea */
+input[type="image"] {
+    max-width: 100%;
+}
+
+
+/* Allow only vertical resizing of textareas. */
+textarea {
+    height: auto;
+    resize: vertical;
+    -webkit-appearance: none;
+}
+
+
+input[type="radio"],
+input[type="checkbox"] {
+    display: inline-block;
+    margin-right: spacer(2);
+}
+
+// Make range inputs behave like textual form controls
+input[type="range"] {
+    display: block;
+    width: 100%;
+}
+
+// Make multiple select elements height not fixed
+select {
+//    height: 2.5em;
+}
+
+select[multiple],
+select[size] {
+     height: auto;
+}
+
+progress,
+meter {
+    display: block;
+    width: 100%;
+    height: spacer(4);
+}

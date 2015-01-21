@@ -1,0 +1,66 @@
+
+/* ==========================================================================
+ROOT
+========================================================================== */
+
+/* Define the root element styles. */
+html {
+    background-color: $root-background;
+    overflow-y: scroll;
+    @include box-sizing;
+    @include mq($min, $md) {
+        padding: spacer(4);
+    }
+
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -ms-text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background-color: $body-background;
+    border: 1px solid $color-border;
+    color: $body-color;
+    font: #{$root-weight} #{$root-size-em}/#{$root-lineheight} $root-family;
+    margin: 0 auto;
+    max-width: $wrapper-width;
+    padding: spacer(4);
+    @include mq($min, $lg) {
+        padding: spacer(8);
+    }
+    @include font-smoothing;
+    @include hyphens;
+}
+
+/*
+* Border-box *all the things*, as suggested in:
+* http:// paulirish.com/2012/box-sizing-border-box-ftw
+*/
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*
+* Lobotomized owls FTW!
+* http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
+*/
+
+* + * {
+    margin-top: spacer(4);
+}
+
+
+/* Colour selected text. */
+::-moz-selection {
+    background-color: $brand-color;
+    color: #fff;
+    text-shadow: none;
+}
+
+::selection {
+    background-color: $brand-color;
+    color: #fff;
+    text-shadow: none;
+}

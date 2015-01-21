@@ -1,0 +1,52 @@
+
+/* ==========================================================================
+    TABLES
+   ========================================================================== */
+
+table {
+//    margin-bottom: spacer(4);
+    width:100%;
+
+    @if $opentype == true {
+        // Turn on tabular, lining numerals and slashed zero.
+        // Turn off kerning, as it could impact tabular numerals.
+        -webkit-font-feature-settings: "kern" 0, "liga" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+        -moz-font-feature-settings: "kern" 0, "liga" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+        font-feature-settings: "kern" 0, "liga" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+
+        //Revert to defaults for table headings
+        thead,
+        tfoot {
+            -webkit-font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
+            -moz-font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
+            font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
+        }
+    }
+}
+
+thead {
+    border-bottom: 1px solid $border-color;
+}
+
+th {
+    font-weight: $strong-weight;
+}
+
+th,
+td {
+    padding: spacer(1);
+    text-align: left;
+}
+
+/* STRIPED TABLES */
+tbody {
+
+    tr {
+//        border-bottom: 1px solid $border-color;
+
+        &:nth-of-type(odd) {
+            background-color: $brand-background;
+        }
+
+    }
+}

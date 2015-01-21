@@ -1,0 +1,164 @@
+
+/* ==========================================================================
+    BUTTONS
+   ========================================================================== */
+
+%btn { // Let's save ourselves from having to use two button classes per button. Bootstrap.
+    background-color: $input-background;
+    border: 2px solid darken($border-color, 15%);
+    border-radius: $button-radius;
+    color: lighten($root-color, 15%);
+    cursor: pointer;
+    display: inline-block;
+    font-family: $button-family;
+    font-weight: $strong-weight;
+    font-size: inherit;
+    padding: spacer(1) spacer(4);
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    @include font-smoothing;
+//    @include font-size($root-size-em, none, none);
+    @include transition(all .4s ease);
+
+    @include mq(sm) {
+        margin-right: spacer(1);
+        width: auto;
+    }
+
+    &:active,
+    &:hover,
+    &:focus {
+        background: rgba(0,0,0,.05);
+        border-color: $root-color;
+        color: $root-color;
+    }
+}
+
+/* BUTTON COLOURS */
+.btn-default, // We don't need to declare multiple button classes. Just one is enough.
+.btn-primary,
+.btn-success,
+.btn-danger,
+.btn-info,
+.btn-warning {
+    @extend %btn;
+}
+
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-danger,
+.btn-warning {
+
+    &:active,
+    &:hover,
+    &:focus {
+        color: #fff;
+    }
+}
+
+.btn-primary {
+
+    border-color: $brand-primary;
+    color: $brand-primary;
+
+    &:active,
+    &:hover,
+    &:focus {
+        background: $brand-primary;
+        border-color: darken($brand-primary, 5%);
+    }
+
+}
+
+.btn-success {
+
+    border-color: $brand-success;
+    color: $brand-success;
+
+    &:active,
+    &:hover,
+    &:focus {
+        background: $brand-success;
+        border-color: darken($brand-success, 5%);
+    }
+}
+
+/*
+.btn-danger {
+
+    border-color: $brand-danger;
+    color: $brand-danger;
+
+    &:active,
+    &:hover,
+    &:focus {
+        background: $brand-danger;
+        border-color: darken($brand-danger, 5%);
+    }
+}
+
+.btn-info {
+    border-color: $brand-info;
+    color: $brand-info;
+
+    &:active,
+    &:hover,
+    &:focus {
+        background: $brand-info;
+        border-color: darken($brand-info, 5%);
+    }
+}
+
+.btn-warning {
+    border-color: $brand-warning;
+    color: $brand-warning;
+
+    &:active,
+    &:hover,
+    &:focus {
+        background: $brand-warning;
+        border-color: darken($brand-warning, 5%);
+    }
+}
+*/
+
+/* BUTTON SIZING */
+
+.btn-small {
+    @include font-size($scale-down1, none, none);
+}
+
+.btn-large {
+    padding: spacer(2) spacer(4);
+}
+
+.btn-huge {
+    padding: spacer(3, $scale-up1) spacer(6, $scale-up1);
+    @include font-size($scale-up1, none, none);
+}
+
+.btn-natural {
+    width: 100%;
+}
+
+.btn-inline {
+    margin: 0;
+}
+
+/* CUSTOM BUTTONS */
+.btn-menu-cta {
+    @include icon(shopping-cart, after); // Using our mixin we can place the icon after the text with ease, and without crap markup.
+}
+
+.btn-cta-buynow {
+
+    margin: spacer(8, $scale-up1) 0;
+
+    .price {
+        border-left: 2px solid $border-color;
+        margin-left: .5em;
+        padding-left: .5em;
+    }
+}

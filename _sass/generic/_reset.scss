@@ -1,0 +1,28 @@
+
+/* ==========================================================================
+    RESET
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+picture,
+section {
+	display: block;
+}

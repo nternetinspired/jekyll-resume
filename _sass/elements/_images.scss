@@ -1,0 +1,17 @@
+
+/* ==========================================================================
+    IMAGES
+   ========================================================================== */
+
+/* Fluid images. */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+    -ms-interpolation-mode: bicubic;
+}
+
+/* Don't ignore `width` and/or `height` attributes if they are present. */
+img[width],
+img[height] {
+    max-width: none;
+}

@@ -1,0 +1,43 @@
+
+/* ==========================================================================
+    HEADINGS
+   ========================================================================== */
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+
+   font-family: $heading-family;
+   font-weight: $heading-weight;
+ //  font-style: italic;
+   text-transform: uppercase;
+}
+
+/*
+* Size increments are set according to our chosen modular scale.
+* Increments for h4 and h5 are zeroed out (1em) at smaller sizes
+* to maintain legibility.
+*/
+h1, .h1 {
+   @include font-size($scale-up3, none);
+}
+
+h2, .h2 {
+   @include font-size($scale-up2, none);
+}
+
+h3, .h3 {
+   @include font-size($scale-up1, none);
+}
+
+h4, .h4 {
+   @include font-size($root-size-em, none);
+}
+
+h5, .h5,
+h6, .h6 {
+   @include font-size($scale-down1, none);
+}

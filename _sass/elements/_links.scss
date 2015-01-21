@@ -1,0 +1,20 @@
+
+/* ==========================================================================
+    LINKS
+   ========================================================================== */
+
+a {
+	@include transition;
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+	    color: $link-color-hover;
+	}
+
+    &:active,
+    &.active {
+        color: darken($link-color-hover, 10%);
+    }
+}

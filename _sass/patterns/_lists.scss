@@ -1,0 +1,44 @@
+
+/* ==========================================================================
+    LISTS
+   ========================================================================== */
+
+.list-block {
+
+    @extend .list-unstyled;
+
+    li {
+
+    }
+}
+
+.list-inline {
+
+    margin-left: 0;
+
+    li {
+        display: inline-block;
+        margin-right: .5em;
+    }
+}
+
+.list-styled {
+    @extend .list-unstyled;
+    margin-right: spacer(4);
+
+    li {
+        @extend .margin-off;
+
+        + li {
+            border-top: 1px solid lighten($color-border, 9%);
+        }
+    }
+}
+
+.list-unstyled {
+
+    &,
+    ul {
+        list-style-type: none;
+    }
+}

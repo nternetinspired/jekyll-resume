@@ -1,0 +1,37 @@
+
+<header role="banner" class="header section">
+
+        <div class="grid">
+
+            <div class="grid-item md-one-third lg-one-quarter">
+                <div class="section-heading">
+                    <a class="logo" href="{{ site.baseurl }}/" rel="home">
+                        <h1>{{ site.author.name }}</h1>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="grid-item md-two-thirds lg-three-quarters">
+                <div class="section-content">
+                    <h2 class="h1">{{ site.author.title }}</h2>
+                </div>
+            </div>
+
+        </div>
+
+</header>
+
+<nav role="navigation" class="sr-only navigation section" aria-label="main navigation">
+    <ul class="nav">
+
+        <li><a href="{{ page.url | prepend: site.baseurl }}#profile">profile</a></li>
+        <li><a href="{{ page.url | prepend: site.baseurl }}#experience">experience</a></li>
+        <li><a href="{{ page.url | prepend: site.baseurl }}#education">education</a></li>
+        <li><a href="{{ page.url | prepend: site.baseurl }}#skills">skills</a></li>
+        <li><a href="{{ page.url | prepend: site.baseurl }}#languages">languages</a></li>
+        <li><a href="{{ page.url | prepend: site.baseurl }}#software">software</a></li>
+        <li><a href="{{ page.url | prepend: site.baseurl }}#contact">contact</a></li>
+
+    </ul>
+</nav>

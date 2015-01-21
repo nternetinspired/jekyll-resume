@@ -1,0 +1,28 @@
+
+/* ==========================================================================
+   	CODE
+   ========================================================================== */
+
+pre,
+code,
+kbd,
+samp {
+
+    font-family: $code-font-family;
+
+    @if $opentype == true {
+        // Turn off kerning and ligatures.
+        // Turn on lining, tabular numerals and slashed zero.
+        -webkit-font-feature-settings: "kern" 0, "liga" 0, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+        -moz-font-feature-settings: "kern" 0, "liga" 0, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+        font-feature-settings: "kern" 0, "liga" 0, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+    }
+}
+
+
+pre {
+    background-color: $pre-background;
+    border: 1px solid $border-color;
+    border-radius: $brand-radius;
+    padding: spacer(4);
+}

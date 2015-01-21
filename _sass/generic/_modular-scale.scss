@@ -1,0 +1,23 @@
+
+/* ==========================================================================
+    MODULAR SCALE
+   ========================================================================== */
+
+/* Derived from: http://ianrose.me/typesettings/ */
+
+// Step down the typographic modular scale
+$scale-down1: $root-size-em / $scale;  // One step down
+$scale-down2: $scale-down1 / $scale;   // Two steps down
+$scale-down3: $scale-down2 / $scale;   // Three steps down
+$scale-down4: $scale-down3 / $scale;   // Four steps down
+$scale-down5: $scale-down4 / $scale;   // Five steps down
+$scale-down6: $scale-down5 / $scale;   // Six steps down
+
+
+// Step up the typographic modular scale
+$scale-up1: $root-size-em * $scale;    // One step up
+$scale-up2: $scale-up1 * $scale;       // Two steps up
+$scale-up3: $scale-up2 * $scale;       // Three steps up
+$scale-up4: $scale-up3 * $scale;       // Four steps up
+$scale-up5: $scale-up4 * $scale;       // Five steps up
+$scale-up6: $scale-up5 * $scale;       // Six steps up

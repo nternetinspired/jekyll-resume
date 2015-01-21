@@ -1,0 +1,32 @@
+# Site settings
+title: The résumé of Some Developer
+author:
+  address:
+      street: 4 Your Street
+      town: Faketown
+      postcode: NG11 9BC
+      country: United Kingdom
+  email: anybody@gmail.com
+  name: Some Developer
+  title: CSS Ninja and html Rockstar
+  twitter_username: nternetinspired
+  github_username:  nternetinspired
+  phone: +44 000 000 0000
+  repository: https://github.com/nternetinspired/jekyll-cv
+  website: http://nternetinspired.github.io/jekyll-cv/
+description: > # this means to ignore newlines until "baseurl:"
+  Powered by Jekyll, and Github Pages ready, Jekyll-cv is a lightweight and lightning-fast
+  html résumé making machine from @nternetinspired. Because web developers shouldn't
+  showcase their skills on bits of dead tree.
+baseurl: "/jekyll-cv/" # the subpath of your site, e.g. /blog/
+url: "http://nternetinspired.github.io" # the base hostname & protocol for your site
+
+# Compress html
+compress_html:
+  clippings: ['!--', html, head, title, base, link, meta, style, body, article, section, nav, aside, h1, h2, h3, h4, h5, h6, hgroup, header, footer, address, p, hr, blockquote, ol, ul, li, dl, dt, dd, figure, figcaption, main, div, table, caption, colgroup, col, tbody, thead, tfoot, tr, td, th]
+  endings: [html, head, body, li, dt, dd, p, rt, rp, optgroup, option, colgroup, caption, thead, tbody, tfoot, tr, td, th]
+
+# Build settings
+markdown: kramdown
+sass:
+    style: :compressed
