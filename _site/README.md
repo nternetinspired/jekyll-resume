@@ -1,14 +1,20 @@
 # Jekyll Résumé
-A lightweight, Jekyll-powered and Github Pages friendly resume. Responsive naturally.
+A lightweight, Jekyll-powered and Github Pages ready résumé-making-machine. 
 
-Powered by Jekyll, and Github Pages ready, Jekyll-résumé is a lightweight and
-lightning-fast html résumé-making-machine from @nternetinspired.
+Responsive? naturally. Lightning fast? Of course!  
 
 ## Why?
-Because real web developers don't showcase their skills on bits of dead tree.
+Because web developers don't showcase their skills on bits of dead tree.
 
 Why write about knowing html, Sass and Liquid using Word when you can write about
 knowing html Sass and Liquid *using html Sass and Liquid*. I know, right??
+
+## My TODO list
+This project is very much a work in progress, so it is a little rough around the edges, I know that. Still todo:
+
+* **Add print styles!**
+* Remove unused css
+* Document some stuff
 
 ## Want?
 Turning this into your own résumé is pretty straightforward I think.
