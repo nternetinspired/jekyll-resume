@@ -9,6 +9,13 @@ Because web developers don't showcase their skills on bits of dead tree.
 Why write about knowing html, Sass and Liquid using Word when you can write about
 knowing html Sass and Liquid *using html Sass and Liquid*. I know, right??
 
+## My TODO list
+This project is very much a work in progress, so it is a little rough around the edges, I know that. Still todo:
+
+* **Add print styles!**
+* Remove unused css
+* Document some stuff
+
 ## Want?
 Turning this into your own résumé is pretty straightforward I think.
 
