@@ -1,8 +1,8 @@
 # Jekyll Résumé
-A lightweight, Jekyll-powered and Github Pages ready résumé-making-machine from [@nternetinspired](//twitter.com/nternetinspired). Responsive? naturally. Lightning fast? Of course!  
+A lightweight, Jekyll-powered and Github Pages ready résumé-making-machine. Responsive? naturally. Lightning fast? Of course!  
 
 ## Why?
-Because real web developers don't showcase their skills on bits of dead tree.
+Because web developers don't showcase their skills on bits of dead tree.
 
 Why write about knowing html, Sass and Liquid using Word when you can write about
 knowing html Sass and Liquid *using html Sass and Liquid*. I know, right??
