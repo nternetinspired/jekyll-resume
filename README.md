@@ -1,8 +1,5 @@
 # Jekyll Résumé
-A lightweight, Jekyll-powered and Github Pages friendly resume. Responsive naturally.
-
-Powered by Jekyll, and Github Pages ready, Jekyll-résumé is a lightweight and
-lightning-fast html résumé-making-machine from @nternetinspired.
+A lightweight, Jekyll-powered and Github Pages ready résumé-making-machine from [@nternetinspired](//twitter.com/nternetinspired). Responsive? naturally. Lightning fast? Of course!  
 
 ## Why?
 Because real web developers don't showcase their skills on bits of dead tree.
