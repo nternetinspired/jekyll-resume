@@ -5,8 +5,10 @@ Powered by Jekyll, and Github Pages ready, Jekyll-résumé is a lightweight and
 lightning-fast html résumé-making-machine from @nternetinspired.
 
 ## Why?
-Because real web developers don't showcase their skills on bits of dead tree. Why
-Write about writing html when you can write html??
+Because real web developers don't showcase their skills on bits of dead tree.
+
+Why write about knowing html, Sass and Liquid using Word when you can write about
+knowing html Sass and Liquid *using html Sass and Liquid*. I know, right??
 
 ## Want?
 Turning this into your own résumé is pretty straightforward I think.
