@@ -271,7 +271,7 @@ layout: page
                     <p class="adr margin-off"><span class="street-address">{{ site.author.address.street }}</span>, <span class="locality"> {{ site.author.address.town }}</span> <span class="postal-code"> {{ site.author.address.postcode }}</span>, <span class="country"> {{ site.author.address.country }}</span></p>
                     <p class="tel margin-off">Tel: <a class="telephone" href="callto:{{ site.author.phone | remove: " "}}" rel="noindex, nofollow">{{ site.author.phone }}</a></p>
                     <p class="eml margin-off">Email: <a class="email" href="mailto:{{ site.author.email }}" rel="noindex, nofollow">{{ site.author.email }}</a></p>
-                    <p class="company margin-off">Web: <a class="fn url org" href="//{{ site.author.website }}">{{ site.author.website }}</a></p>
+                    <p class="company margin-off">Web: <a class="fn url org" href="{{ site.author.website }}">{{ site.author.website }}</a></p>
                 </div>
             </div>
 
