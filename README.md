@@ -22,7 +22,8 @@ Turning this into your own résumé is pretty straightforward I think.
 1. [Fork this repository](https://github.com/nternetinspired/jekyll-resume/fork)
 2. Edit <a href="_config.yml">_config.yml</a> so it contains your personal info; name, email, phone number, etc.
 3. Edit <a href="index.html">index.html</a> so it contains your shit, not [Hipster Ipsum](http://hipsum.co/).
-4. Tweak [my Sass](_sass) if required.
+4. Make a push to the gh-pages branch
+5. Tweak [my Sass](_sass) if required.
 
 That's it, Github should build your site automatically to: http://[YOUR GITHUB USERNAME].github.io/jekyll-resume just as mine builds automatically to [http://nternetinspired.github.io/jekyll-resume](http://nternetinspired.github.io/jekyll-resume)
 
