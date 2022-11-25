@@ -5,10 +5,7 @@
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | truncatewords: 26 }}{% else %}{{ site.description }}{% endif %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="{{ site.author.name }}">
-
     <link rel="stylesheet" href="{{ "css/main.css" | prepend: site.baseurl }}">
-    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 </head>
