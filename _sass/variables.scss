@@ -60,7 +60,6 @@ $code-font-family:      monospace !default;
 // Project element stacks
 $root-family:           $serif-family !default;
 $button-family:         $sans-family !default;
-$heading-family:        'Montserrat', serif !default;
 
 // Enable OpenType font features? Inspired by: https://github.com/kennethormandy/normalize-opentype.css
 $opentype:              false !default;
@@ -76,7 +75,7 @@ $brand-color:           rgb(86, 148, 241) !default; // We'll spin a pallette fro
 $primary-color:         $brand-color !default;
 $complement-color:      adjust_hue($brand-color, 180) !default;
 $secondary-color: 	    adjust_hue($brand-color, 120) !default;
-$tertiary-color: 	    adjust_hue($brand-color, -120) !default;
+$tertiary-color: 	      adjust_hue($brand-color, -120) !default;
 
 // UI elements colours, used in badges, buttons, labels, etc.
 $brand-alert: 	        rgb(252,248,227) !default;
